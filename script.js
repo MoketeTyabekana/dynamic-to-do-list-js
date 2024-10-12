@@ -7,4 +7,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const addButton = document.getElementById("add-task-btn");
   const taskInput = document.getElementById("task-input");
   const taskList = document.getElementById("task-list");
+
+//Create the addTask Function
+
+function addTask(){
+
+
+    const taskText=taskInput.ariaValueMax.trim();
+
+    //retrieved and used trim to remove white spaces in  the value from the task input field.
+    
+    if(taskText==''){
+        alert('Please enter a new task.');
+        return;
+    }
+}
+
 });
