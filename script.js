@@ -16,11 +16,20 @@ function addTask(){
     const taskText=taskInput.ariaValueMax.trim();
 
     //retrieved and used trim to remove white spaces in  the value from the task input field.
-    
+
     if(taskText==''){
         alert('Please enter a new task.');
         return;
     }
+
+    //Task Creation and Removal
+
+   const listItem= document.createElement('li');
+   listItem.textContent='taskText';
+
+   const removeBtn=document.createElement('button');
+   removeBtn.textContent='Remove';
+   removeBtn.className='remove-btn';
 }
 
 });
