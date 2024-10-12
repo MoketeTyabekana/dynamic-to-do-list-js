@@ -30,6 +30,11 @@ function addTask(){
    const removeBtn=document.createElement('button');
    removeBtn.textContent='Remove';
    removeBtn.className='remove-btn';
-}
+
+   //Assigning an onclick event to the remove button
+
+   removeBtn.onclick('click',addTask);
+
+   
 
 });
