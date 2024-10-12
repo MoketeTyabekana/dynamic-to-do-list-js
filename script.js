@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function addTask(){
 
 
-    const taskText=taskInput.ariaValueMax.trim();
+    const taskText=taskInput.value.trim();
 
     //retrieved and used trim to remove white spaces in  the value from the task input field.
 
@@ -25,7 +25,7 @@ function addTask(){
     //Task Creation and Removal
 
    const listItem= document.createElement('li');
-   listItem.textContent='taskText';
+   listItem.textContent=taskText;
 
    const removeBtn=document.createElement('button');
    removeBtn.textContent='Remove';
@@ -33,10 +33,30 @@ function addTask(){
 
    //Assigning an onclick event to the remove button
 
-   removeBtn.onclick('click',addTask);
+   removeBtn.onclick = function() {
+    taskList.removeChild(listItem);
+};
 
    listItem.appendChild(removeBtn);
-   taskList.appendChild(listItem)
+   taskList.appendChild(listItem);
+
+   taskInput.value='';
+
+   
+
+
+   
 }
+// Add an event listener to the "Add Task" button
+addButton.addEventListener('click',addTask);
+
+// Event listener for adding tasks on pressing 'Enter' key
+taskInput.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        addTask();
+    }
+});
 
 });
+
+
