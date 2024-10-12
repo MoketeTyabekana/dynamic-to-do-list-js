@@ -35,6 +35,8 @@ function addTask(){
 
    removeBtn.onclick('click',addTask);
 
-   
+   listItem.appendChild(removeBtn);
+   taskList.appendChild(listItem)
+}
 
 });
