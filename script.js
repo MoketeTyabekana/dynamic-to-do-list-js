@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const taskInput = document.getElementById("task-input");
   const taskList = document.getElementById("task-list");
 
+//Initialize and Load Tasks
+
+loadTask();
+
 //Create the addTask Function
 
 function addTask(){
@@ -48,6 +52,15 @@ function addTask(){
 
    
 }
+
+//Loading tasks from a local storage.
+function loadTask(){
+    const storedTasks=JSON.parse(localStorage.getItem('tasks')|| []);
+    storedTasks.forEach(taskText => addTask(taskText, false));
+}
+
+
+
 // Add an event listener to the "Add Task" button
 addButton.addEventListener('click',addTask);
 
