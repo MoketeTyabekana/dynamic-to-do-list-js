@@ -37,10 +37,14 @@ function addTask(taskText = taskInput.value.trim(), save = true){
 
    removeButton.onclick = function() {
     taskList.removeChild(listItem);
+    removeTaskFromLocalStorage(taskText);
 };
+
+
 
    listItem.appendChild(removeButton);
    taskList.appendChild(listItem);
+   
 
    taskInput.value='';
 
