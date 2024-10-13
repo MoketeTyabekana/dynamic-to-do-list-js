@@ -14,10 +14,7 @@ loadTask();
 
 //Create the addTask Function
 
-function addTask(){
-
-
-    const taskText=taskInput.value.trim();
+function addTask(taskText = taskInput.value.trim(), save = true){
 
     //retrieved and used trim to remove white spaces in  the value from the task input field.
 
@@ -46,6 +43,10 @@ function addTask(){
    taskList.appendChild(listItem);
 
    taskInput.value='';
+
+   if (save) {
+    saveTaskToLocalStorage(taskText);
+}
 
    
 
